@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>방명록</title>
+<script>
+let win=null;
+function showHTML() {
+	if(win == null || win.closed)
+		win = window.open("", "outWin", "width=250,height=150");
+
+	let textArea = document.getElementById("srcText");
+	win.document.open();
+	win.document.write(textArea.value);
+	win.document.close();
+}
+</script>
+</head>
+<body>
+<h3>방명록</h3>
+<hr>
+<p>아래에 응원하고 싶은 한류스타에게 한마디를 남겨보세요!</p>
+<textarea id="srcText" rows="10" cols="40" placeholder="손흥민 짱~"></textarea>
+<br>
+<br>
+<button onclick="showHTML()">HTML 문서 출력하기</button>
+</body>
+</html>
